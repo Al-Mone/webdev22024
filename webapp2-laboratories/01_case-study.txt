@@ -1,0 +1,7 @@
+First off, creating an ambitious project is already doomed to a lot of unintended issues, especially because it poses risks of encountering new problems. 
+This suggests a prompt to reevaluate the way the project is handled and analyze whether it's still within the feasibility scope. 
+Moreover, the compounding unresolved tasks could mean that the team allocated for the project is unfamiliar or inexperienced with the project they're undertaking. 
+Finally, despite the meticulous planning that has been done beforehand, it shows that there was a lack of iterative progress, continuous testing, 
+and adaptive planning, highlighting the absence of cohesive project management. 
+The project would have benefited from an Agile approach, which emphasizes regular sprints, early prototyping, continuous integration, 
+and frequent feedback, ensuring that potential issues are addressed promptly and that the project remains on track.
