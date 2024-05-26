@@ -1,3 +1,6 @@
+CREATE DATABASE `webapp2-db`;
+USE webapp2-db;
+
 CREATE TABLE posts (
     userId INT,
     id INT PRIMARY KEY,
