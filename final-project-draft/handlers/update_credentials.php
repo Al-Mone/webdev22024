@@ -1,4 +1,5 @@
 <?php
+//Under Development: function for updating credentials through the application
 require '../includes/config.php';
 require '../includes/checkLogin.php';
 checkLogin();

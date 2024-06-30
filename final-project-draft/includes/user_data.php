@@ -1,7 +1,7 @@
 <?php
 require 'functions.php';
 
-session_start(); // Ensure the session is started
+session_start();
 
 if (!isset($_SESSION['user_id'])) {
     error_log("User ID not found in session");
@@ -31,21 +31,4 @@ $_SESSION['cover_photo'] = $cover_photo;
 // Debug statements
 error_log("User Photo URL: " . $user_photo);
 error_log("Cover Photo URL: " . $cover_photo);
-
-// require 'functions.php';
-
-// $user_id = $_SESSION['user_id'];
-// $user = fetchUserDetails($pdo, $user_id);
-// $posts = fetchUserPosts($pdo, $user_id);
-// $recommended_users = fetchRecommendedUsers($pdo, $user_id);
-
-// $user_photo = !empty($user['profile_photo']) ? $user['profile_photo'] : 'media/default-profile.jpg';
-// $cover_photo = !empty($user['cover_photo']) ? $user['cover_photo'] : 'media/default-cover.jpg';
-
-// $_SESSION['profile_photo'] = $user_photo;
-// $_SESSION['cover_photo'] = $cover_photo;
-
-// // Debug statements
-// error_log("User Photo URL: " . $user_photo);
-// error_log("Cover Photo URL: " . $cover_photo);
 ?>

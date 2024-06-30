@@ -1,4 +1,5 @@
 <?php
+//Fetch functionality for homepage
 require 'fetch_data.php';
 require 'config.php';
 session_start();

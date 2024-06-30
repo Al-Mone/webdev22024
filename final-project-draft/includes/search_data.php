@@ -1,4 +1,5 @@
 <?php
+// Fetches the data for search results
 require 'fetch_data.php';
 require 'config.php';
 session_start();

@@ -1,3 +1,4 @@
+/* Client-side functionality */
 document.addEventListener('DOMContentLoaded', function() {
     const newPostBtn = document.getElementById('new-post-btn');
     const settingsPopup = document.getElementById('settings-popup');
@@ -17,3 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+function redirectToUserProfile(userId) {
+    window.location.href = 'user.php?userId=' + userId;
+}

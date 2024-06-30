@@ -18,6 +18,7 @@ function fetchUserPosts($pdo, $user_id)
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+//Fetch All Posts
 function fetchAllPosts($pdo, $user_id)
 {
     $stmt = $pdo->prepare('SELECT p.*, u.username, u.profile_photo FROM Posts p JOIN Users u ON p.userId = u.id ORDER BY p.id DESC');

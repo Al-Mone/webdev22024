@@ -1,3 +1,5 @@
+<!-- Homepage Design ---------------------------------------------------------------->
+
 <?php
 // Modules
 require 'includes/homepage_data.php';
@@ -9,17 +11,26 @@ require 'partials/header.php';
         <div class="col-md-8 posts">
             <div class="new-post-container mb-4">
                 <form method="POST" action="create_post.php">
-                    <textarea class="form-control" name="post_body" rows="3"
-                        placeholder="What's on your mind?"></textarea>
-                    <button type="submit" class="btn btn-dark mt-2">Post</button>
+                    <div class="d-flex">
+                        <img src="<?php echo htmlspecialchars($current_user['profile_photo']); ?>" alt="Profile"
+                            class="profile-pic-iconified mr-2">
+                        <textarea class="form-control" name="post_body" rows="3"
+                            placeholder="What's on your mind?"></textarea>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-2">
+                        <button type="submit" class="btn btn-dark">Post</button>
+                    </div>
                 </form>
             </div>
             <?php foreach ($posts as $post): ?>
                 <div class="post mb-3">
                     <div class="post-header d-flex align-items-center">
-                        <img src="<?php echo htmlspecialchars(!empty($post['profile_photo']) ? $post['profile_photo'] : '../media/default-profile.jpg'); ?>"
-                            alt="Profile">
-                        <h5 class="ml-2"><?php echo htmlspecialchars($post['username']); ?></h5>
+                        <a href="user.php?userId=<?php echo htmlspecialchars($post['userId']); ?>">
+                            <img src="<?php echo htmlspecialchars(!empty($post['profile_photo']) ? $post['profile_photo'] : '../media/default-profile.jpg'); ?>"
+                                alt="Profile">
+                        </a>
+                        <a href="user.php?userId=<?php echo htmlspecialchars($post['userId']); ?>"
+                            class="ml-2"><?php echo htmlspecialchars($post['username']); ?></a>
                         <button class="btn btn-link ml-auto"><i class="fas fa-ellipsis-v" style="color: #000;"></i></button>
                     </div>
                     <div class="post-body">
@@ -34,20 +45,8 @@ require 'partials/header.php';
                 </div>
             <?php endforeach; ?>
         </div>
-        <div class="col-md-4 recommended-users">
-            <h5>Recommended Users</h5>
-            <?php foreach ($recommended_users as $recommended_user): ?>
-                <div class="recommended-user mb-3">
-                    <div class="recommended-user-header d-flex align-items-center">
-                        <img src="<?php echo htmlspecialchars(!empty($recommended_user['profile_photo']) ? $recommended_user['profile_photo'] : '../media/default-profile.jpg'); ?>"
-                            alt="Profile">
-                        <h6 class="ml-2"><?php echo htmlspecialchars($recommended_user['username']); ?></h6>
-                    </div>
-                    <div class="recommended-user-footer d-flex justify-content-between">
-                        <button class="btn btn-light">Follow</button>
-                    </div>
-                </div>
-            <?php endforeach; ?>
+        <div class="col-md-4">
+            <?php include 'includes/recommended_users.php'; ?>
         </div>
     </div>
 </div>
