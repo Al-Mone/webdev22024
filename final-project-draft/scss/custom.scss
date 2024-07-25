@@ -1,0 +1,11 @@
+// Custom anchor tag styles
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+a {
+  color: black;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
